@@ -22,4 +22,5 @@ public:
         std::cout << "오늘은 " << dateArr[0] << "년 "
         << dateArr[1] << "월 " << dateArr[2] << "일 입니다." << std::endl;
     };
+    ~Date();
 };

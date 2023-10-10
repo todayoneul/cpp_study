@@ -20,3 +20,7 @@ Date::Date(){
     day = 4;
     setDateArr(year,month,day);
 }
+
+Date::~Date(){
+    delete[] dateArr;
+}

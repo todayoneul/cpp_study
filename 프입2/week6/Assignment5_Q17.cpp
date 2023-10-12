@@ -45,5 +45,8 @@ int main(){
 
     //get 함수 테스트
     cout << myScreen.get() << endl;
+    //17번 두번째 소문제에 대한 답
 
+    //move, set 그리고 display 함수의 return type이 Screen&이 아닌 Screen 이라면 myScreen.move(4,0).set('#').display(cout); 같은 경우엔 move 및 set 변경값이 myScreen 객체의 복사본에 적용되어, return type이 Screen&일 경우와 똑같이 출력(display)되지만,
+    //myScreen.display(cout);같은 경우엔 myScreen.move(4,0).set('#').display(cout);에서의 move 및 set 값이 실제 객체에 적용된 것이 아니라 복사본에 적용된 것이기 때문에 처음에 설정한 Screen myScreen(5,5,'X'); 그대로 출력(display)된다.
 }

@@ -5,7 +5,8 @@
         "ostream": "cpp",
         "iosfwd": "cpp",
         "vector": "cpp",
-        "*.cpp": "cpp"
+        "*.cpp": "cpp",
+        "iostream": "cpp"
     },
     "folders": [],
     "settings": {

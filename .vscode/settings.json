@@ -6,7 +6,8 @@
         "iosfwd": "cpp",
         "vector": "cpp",
         "*.cpp": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "string": "cpp"
     },
     "folders": [],
     "settings": {

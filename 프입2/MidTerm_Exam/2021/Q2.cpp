@@ -8,8 +8,10 @@ class circle{
     void calculateArea();
     public:
         circle() = default;
-        circle(double radius);
-
+        circle(double radius){
+            circle :: radius = radius;
+            calculateArea();
+        };
         void setRadius(double radius);
         double getRadius(){return radius;}
         double getArea(){return area;}
@@ -35,8 +37,5 @@ void circle :: calculateArea(){
     circle :: area = radius * radius * pi;
 }
 
-circle :: circle(double radius){
-    circle :: radius = radius;
-    calculateArea();
-}
+//컴파일러의 동작과 프로그램의 성능의 측면에서 작성한 코드의 setRadius 와 circle의 다른 멤버 함수를 비교하여라.
 

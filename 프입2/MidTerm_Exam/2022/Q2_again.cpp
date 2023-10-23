@@ -3,10 +3,14 @@ using namespace std;
 
 auto func(int(&arr)[10]) -> double(*)[20]
 {
+    
     // 'func' 함수는 정수 10개로 이루어진 배열에 대한 참조를 받고,
     // 크기가 20인 double 배열에 대한 포인터를 반환합니다.
     // 이 함수는 입력 배열에 어떤 연산을 수행해야 하는데,
     // 여기서는 구체적인 연산 내용이 없습니다.
+}
+double(*func2(int(&arr)[10]))[20]{
+
 }
 
 void useFunc(double(*(*pf)(int(&)[10]))[20])
@@ -23,4 +27,5 @@ int main()
    double(*(*pf)(int(&)[10]))[20] = func;
 
    // 'useFunc' 함수에 'pf' 함수 포인터를 전달합니다.
+   useFunc(pf);
 }

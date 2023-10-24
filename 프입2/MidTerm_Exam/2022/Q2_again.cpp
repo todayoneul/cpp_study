@@ -16,7 +16,7 @@ double(*func2(int(&arr)[10]))[20]{
 void useFunc(decltype(func) *pf)
 {
     // double(*(*pf)(int(&)[10]))[20]
-    
+
     // 'useFunc' 함수는 double(*)[20] 형식의 포인터를 인자로 받습니다.
     // 이 포인터는 함수 포인터 'pf'를 나타냅니다.
     // 'pf'는 int(&)[10]를 받아서 double(*)[20]를 반환하는 함수를 가리킵니다.
@@ -26,8 +26,10 @@ void useFunc(decltype(func) *pf)
 int main()
 {
    // 'func' 함수와 같은 시그니처를 가지는 함수 포인터 'pf'를 선언하고 초기화합니다.
-   double(*(*pf)(int(&)[10]))[20] = func;
-
+   
+   //double(*(*pf)(int(&)[10]))[20] = func;
+    typedef decltype(func)(*Pf);
+    Pf pf= func;
    // 'useFunc' 함수에 'pf' 함수 포인터를 전달합니다.
    useFunc(pf);
 }

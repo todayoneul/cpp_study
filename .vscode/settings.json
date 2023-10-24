@@ -9,7 +9,8 @@
         "iostream": "cpp",
         "string": "cpp",
         "list": "cpp",
-        "forward_list": "cpp"
+        "forward_list": "cpp",
+        "__config": "cpp"
     },
     "folders": [],
     "settings": {

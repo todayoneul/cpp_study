@@ -13,8 +13,9 @@ double(*func2(int(&arr)[10]))[20]{
 
 }
 
-void useFunc(decltype(func) *pf)
+void useFunc(double(*(*pf)(int(&)[10]))[20])
 {
+    //decltype(func) *pf
     // double(*(*pf)(int(&)[10]))[20]
 
     // 'useFunc' 함수는 double(*)[20] 형식의 포인터를 인자로 받습니다.

@@ -27,10 +27,10 @@ void useFunc(double(*(*pf)(int(&)[10]))[20])
 int main()
 {
    // 'func' 함수와 같은 시그니처를 가지는 함수 포인터 'pf'를 선언하고 초기화합니다.
-   
-   //double(*(*pf)(int(&)[10]))[20] = func;
+    decltype(func) *pf = func;
+    double(*(*pf)(int(&)[10]))[20] = func;
     typedef decltype(func)(*Pf);
     Pf pf= func;
-   // 'useFunc' 함수에 'pf' 함수 포인터를 전달합니다.
-   useFunc(pf);
+    // 'useFunc' 함수에 'pf' 함수 포인터를 전달합니다.
+    useFunc(pf);
 }

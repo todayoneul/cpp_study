@@ -1,52 +1,28 @@
+#include <time.h>
 #include <iostream>
 #include <vector>
-using namespace std;
+#include <list>
+#include <random>
 
+std::default_random_engine random_engine(time(nullptr));
+std::uniform_int_distribution <unsigned int> rand_dis(0,10);//randomDistance를 위해 추가해줌
+std::uniform_int_distribution<unsigned int> ability_range(0, 100);
+std::uniform_real_distribution<float> possibility(0.f, 1.f);
 
 int main(){
-    vector<string> svec;
+    int a=400;
+    int temp =1;
 
-    string input;
-    //string형의 input이 들어올때까지 무한히 입력을 받기 때문에 마지막 단어 입력 이후 엔터키를 입력하고 control + d 키를 이용해 EOF로 쉘 종료
-    while (cin>>input)
-        svec.push_back(input);
-    vector<int> countRepeat(svec.size(),1);
-
-    int maxCount;
-    string repeatdWord;
-    int cnt =1;
-
-    for(int i=0; i< svec.size()-1; i++){
-        string tempword = svec[i];
-        maxCount = *max_element(countRepeat.begin(),countRepeat.end());
-        if (i>0){
-            string prevWord = svec[i-1];
-            if(tempword != repeatdWord && tempword != prevWord){
-                for(int j=i+1; j < svec.size()-1-i; j++){
-                    if(tempword == svec[j])
-                        cnt++;
-                }
-            }
-            if(cnt != 1 && cnt > maxCount)
-                repeatdWord = tempword;
-        }
-        
-        else{
-            repeatdWord = tempword;
-            for(int j=i+1; j < svec.size()-1-i; j++){
-                if(tempword == svec[j])
-                    cnt++;
-            }
-        }
-        countRepeat[i] = cnt;
-        cnt = 1;
-    }
-    if (maxCount == 1)
-        cout << "No word was repeated";
-    else{
-        cout << "Most duplicated word : " << repeatdWord <<endl;
-        cout << "It occurred "<< maxCount << " times." << endl;
+    while (temp != a)
+    {
+        float p = possibility(random_engine);
+        temp++;
+        std::cout << p << std::endl;
     }
 
-
+    std::vector<int> ivec(10,1);
+    std::list<int> ilist = {1,2,3,4,5,6,7,8,9,10};
+    std::cout << ivec.back() << std::endl;
+    std::cout << ilist.back() << std::endl;
 }
+

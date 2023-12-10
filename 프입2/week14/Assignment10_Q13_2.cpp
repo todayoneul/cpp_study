@@ -2,7 +2,9 @@
 #include <vector>
 #include <list>
 
+//2개의 parmeter, 하나는 iterator, 하나는 value
 template <typename Iter, typename T>
+//찾은 value의 iterator를 반환하고, 3개의 parameter를 받음 (시작 위치, 끝 위치, 찾는 value)
 Iter my_find(Iter begin, Iter end, const T& value) {
     while (begin != end) { 
         if (*begin == value) {

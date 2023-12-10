@@ -1,5 +1,6 @@
 #include <iostream>
-
+//function object class
+// 첫번째 parameter를 만족하면, 두번째 parameter를, 아니면 세번째 parameter 반환
 class if_else{
 public:
     std::string operator() (bool test, std::string s1, std::string s2) const {
